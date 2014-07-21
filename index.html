@@ -1,18 +1,13 @@
 <style>
-html, body {
-    height:100%;
-    width:100%;
-    margin:0px;
-}
-body {
-    display:table;
-    vertical-align:middle;
-    text-align:center;
-}
-div {
-    display:table-cell;
-    vertical-align:middle;
-}
-  
+  body {height:100%; overflow-y:hidden;}
+
+  .with-bg-size
+  {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
 </style>
-<div><font size = 100%>OR NA</font></div>
+
+<div class="with-bg-size" style="position:fixed; top:0px; left:0px; z-index:900; width:100%; overflow-y:hidden; overflow-x:hidden; margin:auto;"><font>OR NA</font></div> 
