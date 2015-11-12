@@ -36,16 +36,26 @@ font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 </style>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 <script>
 		$(document).ready(function(){
-			var random_number = Math.floor((Math.random() * 10) + 1);
-			if (random_number > 7) {
-				$("#big").html("YES");
-				console.log("YES");
-			} else {
-				$("#big").html("OR NA");
-				console.log("OR NA");
+			rephresh();
+
+			$("button").click(function(){
+	    		rephresh();
+			});
+
+			function rephresh() {
+	    		var random_number = Math.floor((Math.random() * 10) + 1);
+				if (random_number > 7) {
+					$("#big").html("YES");
+				} else {
+					$("#big").html("OR NA");
+				}
 			}
+
 		});
 </script>
 
@@ -53,7 +63,10 @@ font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 <body>
 <div>
 
-    <SPAN id="big">OR NA</SPAN>
+    <div class="col-md-12 text-center" id="big">OR NA</div>
+    <div class="col-md-12 text-center">
+		<button type="button" class="btn btn-default">Rephresh</button>
+	</div>
 
     <div id="footer">
 		<!-- Footer start -->
@@ -63,7 +76,7 @@ font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 		<a href="https://twitter.com/spikeysam71" class="twitter-follow-button" data-show-count="false">Follow @spikeysam71</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 		-->
-		<a href="https://twitter.com/share" class="twitter-share-button" data-via="aaron_nussbaum and @spikeysam71" data-size="large" data-hashtags="ORNA">Tweet</a>
+		<a href="https://twitter.com/share" class="twitter-share-button" data-via="aaron_nussbaum" data-size="large" data-hashtags="ORNA">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 			
 		</p>
