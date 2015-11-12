@@ -14,7 +14,7 @@ div {
     vertical-align:middle;
 }
 
-.big
+#big
 {
 font-size:1600%;
 font-weight:bold;
@@ -35,10 +35,25 @@ font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   
 </style>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+		$(document).ready(function(){
+			var random_number = Math.floor((Math.random() * 10) + 1);
+			if (random_number > 7) {
+				$("#big").html("YES");
+				console.log("YES");
+			} else {
+				$("#big").html("OR NA");
+				console.log("OR NA");
+			}
+		});
+</script>
+
+
 <body>
 <div>
 
-    <SPAN CLASS="big">OR NA</SPAN>
+    <SPAN id="big">OR NA</SPAN>
 
     <div id="footer">
 		<!-- Footer start -->
