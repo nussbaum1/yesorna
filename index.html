@@ -32,6 +32,14 @@ font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 	margin:0;
 	padding:10px;
 }
+
+.blackBackground {
+	background-color: black;
+}
+
+.whiteBackground {
+	background-color: white;
+}
   
 </style>
 
@@ -68,9 +76,13 @@ font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     			rephreshCount++;
     		} else {
     			$("#loader").css('visibility', 'visible');
+    			$("body").removeClass("whiteBackground");
+    			$("body").addClass("blackBackground");
     			setTimeout(function(){
     				rephreshHelper();
 					$("#loader").css('visibility', 'hidden');
+					$("body").removeClass("blackBackground");
+					$("body").addClass("whiteBackground");
 				}, 2000);
 				rephreshCount++;
 
@@ -97,7 +109,7 @@ font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 </script>
 
 
-<body>
+<body class="whiteBackground">
 <div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center" id="big">OR NA</div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center" style="height:60px; margin-bottom:30px;">
