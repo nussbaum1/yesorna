@@ -40,6 +40,8 @@ font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
+<link rel="stylesheet" href="http://css-spinners.com/css/spinners.css" type="text/css">
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -52,29 +54,52 @@ font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 </script>
 
 <script>
-		$(document).ready(function(){
-			rephresh();
+	$(document).ready(function(){
+		var rephreshCount = 0;
+		rephresh();
 
-			$("button").click(function(){
-	    		rephresh();
-			});
-
-			function rephresh() {
-	    		var random_number = Math.floor((Math.random() * 10) + 1);
-				if (random_number > 7) {
-					$("#big").html("YES");
-				} else {
-					$("#big").html("OR NA");
-				}
-			}
-
+		$("button").click(function(){
+    		rephresh();
 		});
+
+		function rephresh() {
+    		if (rephreshCount == 0) {
+    			rephreshHelper();
+    			rephreshCount++;
+    		} else {
+    			$("#loader").css('visibility', 'visible');
+    			setTimeout(function(){
+    				rephreshHelper();
+					$("#loader").css('visibility', 'hidden');
+				}, 2000);
+				rephreshCount++;
+
+				if (rephreshCount % 2 == 0) {
+					$("#loader").removeClass("gauge-loader");
+					$("#loader").addClass("pong-loader");
+				} else {
+					$("#loader").removeClass("pong-loader");
+					$("#loader").addClass("gauge-loader");
+				}
+    		}
+		};
+
+		function rephreshHelper(){
+			var random_number = Math.floor((Math.random() * 10) + 1);
+			if (random_number > 7) {
+				$("#big").html("YES");
+			} else {
+				$("#big").html("OR NA");
+			}
+		};
+
+	});
 </script>
 
 
 <body>
 <div>
-
+	<div id="loader" class="gauge-loader" style="visibility:hidden;"></div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center" id="big">OR NA</div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
 		<button type="button" class="btn btn-default btn-lg">Rephresh</button>
