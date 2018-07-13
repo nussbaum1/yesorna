@@ -91,10 +91,13 @@ font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 
 		function rephreshHelper(){
 			var random_number = Math.floor((Math.random() * 10) + 1);
+			var favicon = document.getElementById('favicon);
 			if (random_number > 5) {
 				$("#big").html("YES");
+				favicon.href = 'img/favicon.png';
 			} else {
 				$("#big").html("OR NA");
+				favicon.href = 'img/favicon_sad.png';
 			}
 		};
 
@@ -116,7 +119,7 @@ font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
       document.write("<meta name='twitter:card' content='img/orna.png'/>");
     }
   </script>
-  <link rel="icon" type="image/x-icon" href="img/favicon.png" />
+  <link id='favicon' rel="icon" type="image/x-icon" href="img/favicon.png" />
 </head>
 <body class="whiteBackground">
 <div>
